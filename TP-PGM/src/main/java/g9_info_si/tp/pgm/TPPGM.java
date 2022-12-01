@@ -27,6 +27,8 @@ public class TPPGM {
     
 
     public static void main(String[] args) {
+        TPPGM test = new TPPGM("C:\\Users\\leo20\\Documents\\NetBeansProjects\\tp-pgm-groupe-17-leo-et-corentin\\TP-PGM\\src\\baboon");
+        test.lecture();
         JFrame Frame = new JFrame("Analyse d'image");
         JPanel panneau = new JPanel();
         FlowLayout gest = new FlowLayout();
