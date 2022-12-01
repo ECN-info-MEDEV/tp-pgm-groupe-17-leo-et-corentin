@@ -3,14 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package ei2.tppgm;
+package ei2.tp.pgm_leo;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
@@ -69,39 +67,20 @@ public class TPPGM {
      * @param nomFichier : Le nom du fichier qu'on veut créer, ou éditer
      */
     private void ecriture(int[][] matrice, String nomFichier){
-        int coordX = matrice.length;
-        int coordY = matrice[0].length;
-        String toAdd ="";
+        int coordX = matrice.length();
+        int coordY = matrice[0].length();
+        String toAdd;
         BufferedWriter bw = null;
         
         try{
             //Création du bufferedWriter
             bw = new BufferedWriter(new FileWriter(nomFichier));
-            //Ecriture des premières lignes
-            bw.write("P2");
-            bw.newLine();
-            bw.write("#");
-            bw.newLine();
-            bw.write(coordX+" "+coordY);
-            bw.write("255");
-            bw.newLine();
-            for (int i = 0; i < coordX-1; i++) {
-                for (int j = 0; j < coordY-1; j++){
-                    toAdd += matrice[i][j]+" ";
-                }
-                bw.write(toAdd);
-                toAdd="";
-                bw.newLine();
-            }
         }
         //Gestion de l'exception si le fichier n'a pas pu être créé
         catch(FileNotFoundException ex){
             ex.printStackTrace();
         }
         //Gestion de l'exception si il y a un problème au cours de l'écriture du fichier
-        catch(IOException ex){
-            ex.printStackTrace();
-        }
     }
     public static void seuillage(ArrayList<Integer> mat, int seuil){
         
