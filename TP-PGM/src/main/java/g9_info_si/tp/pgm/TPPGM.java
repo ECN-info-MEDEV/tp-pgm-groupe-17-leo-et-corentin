@@ -75,7 +75,7 @@ public class TPPGM {
     /**
      * Fonction de lecture d'un fichier PGM
      */
-    static private int[][] lecture(){
+    private int[][] lecture(){
         try{
             String ligne="";
             BufferedReader fichier = new BufferedReader(new FileReader(source));
@@ -111,7 +111,7 @@ public class TPPGM {
      * @param matrice : Le tableau des niveau de gris
      * @param nomFichier : Le nom du fichier qu'on veut créer, ou éditer
      */
-    static private void ecriture(int[][] matrice, String nomFichier){
+    private void ecriture(int[][] matrice, String nomFichier){
         int coordX = matrice.length;
         int coordY = matrice[0].length;
         String toAdd ="";
