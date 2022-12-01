@@ -23,7 +23,7 @@ import javax.swing.*;
  */
 public class TPPGM {
     
-    
+    private String source;
     
 
     public static void main(String[] args) {
@@ -63,7 +63,7 @@ public class TPPGM {
 
 
 
-    private String source;
+    
 
    /**
     * Constructeur de TPPGM 
