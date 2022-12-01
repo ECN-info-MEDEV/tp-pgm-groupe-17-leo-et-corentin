@@ -38,13 +38,21 @@ public class TPPGM {
             ligne = fichier.readLine();
             int x = parseInt(tokenizer.nextToken());
             int y = parseInt(tokenizer.nextToken());
-            
+            int compteurX = 0;
+            int compteurY = 0;
+            int [][] matrice = new int[x][y];
             ligne = fichier.readLine();
             ligne = fichier.readLine();
             while (ligne != null){
-                
+                while(tokenizer.hasMoreTokens()){
+                    matrice[compteurX][compteurY] = parseInt(tokenizer.nextToken());
+                    compteurX+=1;
+                }
+                compteurX = 0;
+                compteurY+=1;
                 ligne = fichier.readLine();
             }
+            System.out.println(matrice);
             fichier.close();
         } catch (Exception e) {
             e.printStackTrace();
