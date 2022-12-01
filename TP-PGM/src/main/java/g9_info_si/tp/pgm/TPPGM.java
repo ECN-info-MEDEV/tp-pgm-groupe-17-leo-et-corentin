@@ -23,23 +23,29 @@ public class TPPGM {
         FlowLayout gest = new FlowLayout();
         
         panneau.setLayout(gest);
-//        panneau.add(new JButton("Écrire"));
-//        panneau.add(new JButton("Lire"));
-//        panneau.add(new JButton("Histogramme"));
-//        panneau.add(new JButton("Seuillage"));
-//        panneau.add(new JButton("Agrandir"));
-//        panneau.add(new JButton("Rétrécir"));
         
-        JMenuBar barmen = new JMenuBar();
-        JMenu jym = new JMenu("Choisir une option");
-        barmen.add(jym);
-        jym.add(new JMenuItem("Lire"));
-        jym.add(new JMenuItem("Écrire"));
-        jym.add(new JMenuItem("Histogramme"));
-        jym.add(new JMenuItem("Seuillage"));
-        jym.add(new JMenuItem("Modifier Taille"));
         
-        panneau.add(barmen);
+        JButton ecr = new JButton("Écrire");
+        panneau.add(ecr);
+        EcritureActionListener instance = new EcritureActionListener(Frame);
+        ecr.addActionListener(instance);
+        panneau.add(new JButton("Lire"));
+        panneau.add(new JButton("Histogramme"));
+        panneau.add(new JButton("Seuillage"));
+        panneau.add(new JButton("Agrandir"));
+        panneau.add(new JButton("Rétrécir"));
+        
+        
+//        JMenuBar barmen = new JMenuBar();
+//        JMenu jym = new JMenu("Choisir une option");
+//        barmen.add(jym);
+//        jym.add(new JMenuItem("Lire"));
+//        jym.add(new JMenuItem("Écrire"));
+//        jym.add(new JMenuItem("Histogramme"));
+//        jym.add(new JMenuItem("Seuillage"));
+//        jym.add(new JMenuItem("Modifier Taille"));
+//        
+//        panneau.add(barmen);
         
         Frame.setContentPane(panneau); 
         Frame.pack();
